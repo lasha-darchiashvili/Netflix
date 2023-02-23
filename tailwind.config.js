@@ -12,6 +12,12 @@ module.exports = {
       colors: {
         red: "#e50914",
       },
+      fontFamily: {
+        roboto: ["Roboto", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
+        nunito: ["Nunito", "sans-serif"],
+        raleway: ["Raleway", "sans-serif"],
+      },
     },
   },
   plugins: [],
