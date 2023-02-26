@@ -18,10 +18,10 @@ const Signup = () => {
   };
 
   return (
-    <div className="rounded z-10 w-[400px] h-[550px] absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] bg-black/75 text-white ">
+    <div className="rounded z-10 sm:w-[400px] sm:h-[550px] absolute top-0 right-0 left-0 bottom-0 sm:top-[50%] sm:left-[50%] sm:translate-x-[-50%] sm:translate-y-[-50%] bg-black/75 text-white ">
       <form
         action=""
-        className="w-full flex flex-col p-[6rem]"
+        className="w-full flex flex-col sm:p-[6rem] px-[6rem] pt-[14rem]"
         onSubmit={submitHandler}
       >
         <h1 className="text-[3rem] mb-[1rem] font-semibold">Sign Up</h1>

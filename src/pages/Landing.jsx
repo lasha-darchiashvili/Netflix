@@ -1,6 +1,6 @@
 import React from "react";
 import LandingImg from "../assets/Landingimg.jpg";
-import Navbar from "./Navbar";
+import Navbar from "../components/Navbar";
 
 const Landing = () => {
   return (

@@ -33,7 +33,7 @@ const MoviesSlider = (props) => {
 
   return (
     <div className="flex flex-col items-center ">
-      <p className="ml-[4rem] mt-[6rem]  mb-[2rem] text-[2.4rem] text-white self-start">
+      <p className="ml-[4rem] mt-[3rem]   text-[2.4rem] text-white self-start">
         {props.title}
       </p>
       <div className=" w-full flex justify-end">
@@ -61,7 +61,7 @@ const MoviesSlider = (props) => {
                 className={`w-[400px]  transition duration-200 py-[20px]  hover:scale-[1.05] z-10 hover:z-20 cursor-pointer`}
               >
                 <img
-                  src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
+                  src={`https://image.tmdb.org/t/p/w500${movie[props.image]}`}
                   alt={movie.title}
                   className="w-[400px]  h-auto"
                 />

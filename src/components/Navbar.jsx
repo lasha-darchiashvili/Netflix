@@ -1,13 +1,18 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import NetflixLogo from "../assets/netflixLogo.png";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
+import Loading from "./Loading";
 
 const Navbar = () => {
-  const { logOut, user } = useContext(AuthContext);
+  const { logOut, user, authFinished } = useContext(AuthContext);
+
+  if (!authFinished) {
+    return <Loading />;
+  }
 
   return (
-    <div className="flex justify-between items-center absolute w-full z-10">
+    <div className="flex justify-between items-center absolute w-full z-20">
       <div className="mx-[1.5rem]  sm:mx-[4rem] my-[2rem]">
         <Link to="/">
           {" "}
@@ -19,7 +24,13 @@ const Navbar = () => {
         </Link>
       </div>
       {user ? (
-        <div className="sm:mx-[5rem] my-[2rem] mx-[2rem]">
+        <div className="sm:mx-[5rem] my-[2rem] mx-[2rem] fold:flex fold:flex-col fold:items-center fold:gap-[1rem]">
+          <Link
+            className=" rounded text-white text-[1.6rem] font-semibold mr-[2rem]"
+            to="/movies"
+          >
+            Movies
+          </Link>
           <Link
             className=" bg-red px-[1.5rem] py-[0.5rem] rounded text-white text-[1.6rem] font-semibold"
             onClick={logOut}
@@ -29,7 +40,7 @@ const Navbar = () => {
           </Link>
         </div>
       ) : (
-        <div className="sm:mx-[5rem] my-[2rem] mx-[2rem]">
+        <div className="sm:mx-[5rem] my-[2rem] mx-[2rem] fold:flex fold:flex-col">
           <Link
             className=" rounded text-white text-[1.6rem] font-semibold mr-[2rem]"
             to="/signin"

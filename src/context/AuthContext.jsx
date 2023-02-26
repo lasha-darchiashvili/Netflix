@@ -11,7 +11,8 @@ import { useFetcher } from "react-router-dom";
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState();
+  const [user, setUser] = useState(null);
+  const [authFinished, setAuthFinished] = useState(false);
 
   function signUpUser(email, password) {
     return createUserWithEmailAndPassword(auth, email, password);
@@ -26,22 +27,18 @@ export const AuthProvider = ({ children }) => {
   }
 
   useEffect(() => {
-    const listen = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        setUser(user);
-        console.log(user);
-      } else {
-        setUser(null);
-        console.log("not signed");
-      }
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setUser(user);
+      setAuthFinished(true);
     });
-    return () => {
-      listen();
-    };
-  });
+
+    return () => unsubscribe();
+  }, []);
 
   return (
-    <AuthContext.Provider value={{ signUpUser, logIn, logOut, user }}>
+    <AuthContext.Provider
+      value={{ signUpUser, logIn, logOut, user, authFinished }}
+    >
       {children}
     </AuthContext.Provider>
   );

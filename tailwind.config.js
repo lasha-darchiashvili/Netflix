@@ -7,6 +7,7 @@ module.exports = {
       sm: "768px",
       md: "1060px",
       mob: { max: "479px" },
+      fold: { max: "320px" },
     },
     extend: {
       colors: {

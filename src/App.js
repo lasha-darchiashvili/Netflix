@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Landing from "./components/Landing";
-import Main from "./components/Main";
+import Landing from "./pages/Landing";
+import ProtectedRoute from "./components/ProtectedRoute";
+import ProtectedRouteForSigned from "./components/ProtectedRouteForSigned";
 
 import "./index.css";
 import { Route, Routes } from "react-router-dom";
@@ -16,9 +17,30 @@ function App() {
       <AuthProvider>
         <Routes>
           <Route path="/" element={<Landing />} />
-          <Route path="/movies" element={<Home />} />
-          <Route path="/signup" element={<SignupPage />} />
-          <Route path="/signin" element={<SigninPage />} />
+          <Route
+            path="/movies"
+            element={
+              <ProtectedRoute>
+                <Home />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/signup"
+            element={
+              <ProtectedRouteForSigned>
+                <SignupPage />
+              </ProtectedRouteForSigned>
+            }
+          />
+          <Route
+            path="/signin"
+            element={
+              <ProtectedRouteForSigned>
+                <SigninPage />
+              </ProtectedRouteForSigned>
+            }
+          />
         </Routes>
       </AuthProvider>
     </div>
