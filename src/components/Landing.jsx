@@ -1,9 +1,11 @@
 import React from "react";
 import LandingImg from "../assets/Landingimg.jpg";
+import Navbar from "./Navbar";
 
 const Landing = () => {
   return (
     <div className="">
+      <Navbar />
       <div className="w-full h-screen absolute">
         <img
           src={LandingImg}

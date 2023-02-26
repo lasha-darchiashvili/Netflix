@@ -41,8 +41,8 @@ const Main = () => {
           className="h-full w-full object-cover"
         />
 
-        <div className="absolute top-[12%] w-[600px] m-[4rem]">
-          <p className="text-[4.8rem] text-white font-bold my-[1rem] whitespace-nowrap">
+        <div className="absolute top-[12%] sm:w-[600px] m-[4rem]">
+          <p className="text-[2.4rem] sm:text-[4.8rem] text-white font-bold my-[1rem] xs:whitespace-nowrap">
             {movie.title}
           </p>
           <button className="bg-gray-300 text-[1.4rem] text-black py-2 px-5 my-[1rem] font-semibold mr-[2rem] tracking-wider hover:opacity-[0.9]">
@@ -54,7 +54,9 @@ const Main = () => {
           <p className="text-gray-500 text-[1.2rem] my-[1rem]">
             Released {movie.release_date}
           </p>
-          <p className="text-[1.6rem] text-white ">{movie?.overview}</p>
+          <p className="xs:text-[1.6rem] mob:text-[1.2rem] text-white mob:w-[200px]">
+            {movie?.overview}
+          </p>
         </div>
       </div>
     </>

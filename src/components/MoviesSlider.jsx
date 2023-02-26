@@ -32,25 +32,44 @@ const MoviesSlider = (props) => {
   }
 
   return (
-    <div className="flex flex-col items-center">
-      <p className="m-[2rem] text-[2.4rem] text-white">{props.title}</p>
-      <div className="w-[96%] group">
-        <Swiper
-          spaceBetween={10}
-          slidesPerView={7}
-          onSlideChange={() => console.log("slide change")}
-          onSwiper={(swiper) => console.log(swiper)}
-        >
-          {movies.map((movie) => (
-            <SwiperSlide key={movie.id} className="w-[400px]">
-              <img
-                src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
-                alt={movie.title}
-                className="w-[400px]"
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+    <div className="flex flex-col items-center ">
+      <p className="ml-[4rem] mt-[6rem]  mb-[2rem] text-[2.4rem] text-white self-start">
+        {props.title}
+      </p>
+      <div className=" w-full flex justify-end">
+        <div className="w-[98%]  group overflow-visible ">
+          <Swiper
+            className=""
+            spaceBetween={2}
+            slidesPerView={2.2}
+            onSlideChange={() => console.log("slide change")}
+            onSwiper={(swiper) => console.log(swiper)}
+            modules={[Navigation, Pagination, Scrollbar, A11y]}
+            breakpoints={{
+              480: {
+                slidesPerView: 3.1,
+              },
+              576: {
+                slidesPerView: 6.2,
+                spaceBetween: 10,
+              },
+            }}
+          >
+            {movies.map((movie) => (
+              <SwiperSlide
+                key={movie.id}
+                className={`w-[400px]  transition duration-200 py-[20px]  hover:scale-[1.05] z-10 hover:z-20 cursor-pointer`}
+              >
+                <img
+                  src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
+                  alt={movie.title}
+                  className="w-[400px]  h-auto"
+                />
+                <div></div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
       </div>
     </div>
   );

@@ -3,7 +3,7 @@ import Main from "../components/Main";
 import Navbar from "../components/Navbar";
 import MoviesSlider from "../components/MoviesSlider";
 import requests from "../Requests";
-import { LoadingProvider, AppContext } from "../context/LoadingContext";
+import { LoadingProvider } from "../context/LoadingContext";
 
 const Home = () => {
   return (
