@@ -15,7 +15,7 @@ const Main = () => {
   const movie = movies[randomIndex];
 
   useEffect(() => {
-    fetch(requests.fetchNowPlaying)
+    fetch(requests[2].url)
       .then((response) => response.json())
       .then((data) => {
         setMovies(data.results);

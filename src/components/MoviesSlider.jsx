@@ -24,7 +24,7 @@ const MoviesSlider = (props) => {
         setMovies(data.results);
         setTimeout(() => setSliderLoading(false), 600);
       })
-      .catch((error) => console.error(error));
+      .catch((error) => console.log(error));
   }, []);
 
   if (loading || sliderLoading) {
