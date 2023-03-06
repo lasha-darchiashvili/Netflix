@@ -34,15 +34,15 @@ const Main = () => {
   return (
     <>
       <Navbar />
-      <div className="sm:h-[600px] h-[400px] w-full font-roboto">
-        <div className="absolute sm:h-[600px] h-[400px] w-full bg-black opacity-60"></div>
+      <div className="sm:h-[600px] h-[450px] w-full font-roboto">
+        <div className="absolute sm:h-[600px] h-[450px] w-full bg-black opacity-60"></div>
         <img
           src={`https://image.tmdb.org/t/p/original/${movie["backdrop_path"]}`}
           alt=""
           className="h-full w-full object-cover"
         />
 
-        <div className="absolute top-[12%] sm:w-[600px] m-[4rem]">
+        <div className="absolute sm:top-[12%] xs:top-[8%] top-[6%] sm:w-[600px] xs:m-[4rem] m-[2rem]">
           <p className="text-[2.4rem] sm:text-[4.8rem] text-white font-bold my-[1rem] xs:whitespace-nowrap">
             {movie.title}
           </p>
