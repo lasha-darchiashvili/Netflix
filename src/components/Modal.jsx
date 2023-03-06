@@ -74,9 +74,11 @@ const Modal = () => {
 
           <div className="absolute bottom-[4rem] flex items-center justify-between w-[90%]">
             <div className="flex gap-[1rem]">
-              <button className=" gap-[1rem] flex items-center rounded-lg bg-white px-[4rem]  font-bold text-black transition hover:bg-[#e6e6e6]">
-                <FaPlay className="xs:h-[3rem] xs:w-[3rem]" color="black" />
-                <p className="text-[1.6rem]">Play</p>
+              <button className=" gap-[1rem] flex items-center rounded-lg xs:bg-white bg-[#2a2a2a]/60 xs:border-none border-2 border-[gray] px-[4rem]  font-bold text-black transition hover:bg-[#e6e6e6]">
+                <FaPlay className="xs:h-[3rem] xs:w-[3rem] text-white xs:text-black" />
+                <p className="text-[1.6rem] text-white xs:text-black font-normal xs:font-bold">
+                  Play
+                </p>
               </button>
               <button className=" xs:py-[1rem] xs:px-[1rem] py-[0.5rem] px-[0.5rem] flex  items-center justify-center rounded-full border-2 border-[gray] bg-[#2a2a2a]/60 transition hover:border-white hover:bg-white/10">
                 <AiOutlinePlus
