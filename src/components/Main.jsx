@@ -42,7 +42,7 @@ const Main = () => {
           className="h-full w-full object-cover"
         />
 
-        <div className="absolute sm:top-[12%] xs:top-[8%] top-[6%] sm:w-[600px] xs:m-[4rem] m-[2rem]">
+        <div className="absolute top-[12%]  sm:w-[600px] xs:m-[4rem] m-[2rem]">
           <p className="text-[2.4rem] sm:text-[4.8rem] text-white font-bold my-[1rem] xs:whitespace-nowrap">
             {movie.title}
           </p>
