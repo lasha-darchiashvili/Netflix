@@ -5,7 +5,6 @@ import { useContext } from "react";
 
 const ProtectedRouteForSigned = ({ children }) => {
   const { user, authFinished } = useContext(AuthContext);
-  console.log(333);
 
   if (user) {
     return <Navigate to="/" />;

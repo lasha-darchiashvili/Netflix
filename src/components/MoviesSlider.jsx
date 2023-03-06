@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import requests from "../Requests";
 import { ReactComponent as Loader } from "../assets/loader.svg";
 import { LoadingContext } from "../context/LoadingContext";
+import { ModalContext } from "../context/ModalContext";
 
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -13,9 +14,8 @@ import "swiper/css/scrollbar";
 const MoviesSlider = (props) => {
   const { sliderLoading, setSliderLoading, loading, setLoading } =
     useContext(LoadingContext);
+  const { setChosenMovie, setShowModal } = useContext(ModalContext);
   const [movies, setMovies] = useState([]);
-
-  console.log(movies);
 
   useEffect(() => {
     fetch(props.url)
@@ -43,7 +43,6 @@ const MoviesSlider = (props) => {
             spaceBetween={2}
             slidesPerView={2.2}
             onSlideChange={() => console.log("slide change")}
-            onSwiper={(swiper) => console.log(swiper)}
             modules={[Navigation, Pagination, Scrollbar, A11y]}
             breakpoints={{
               480: {
@@ -58,12 +57,16 @@ const MoviesSlider = (props) => {
             {movies.map((movie) => (
               <SwiperSlide
                 key={movie.id}
-                className={`w-[400px]  transition duration-200 py-[20px]  hover:scale-[1.05] z-10 hover:z-20 cursor-pointer`}
+                className={`w-[400px] rounded-xl transition duration-200 py-[20px]  hover:scale-[1.05] z-10 hover:z-20 cursor-pointer`}
+                onClick={() => {
+                  setShowModal(true);
+                  setChosenMovie(movie);
+                }}
               >
                 <img
                   src={`https://image.tmdb.org/t/p/w500${movie[props.image]}`}
                   alt={movie.title}
-                  className="w-[400px]  h-auto"
+                  className="w-[400px] rounded-xl h-auto"
                 />
                 <div></div>
               </SwiperSlide>

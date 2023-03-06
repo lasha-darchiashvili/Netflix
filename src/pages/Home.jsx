@@ -4,8 +4,12 @@ import Navbar from "../components/Navbar";
 import MoviesSlider from "../components/MoviesSlider";
 import requests from "../Requests";
 import { LoadingProvider } from "../context/LoadingContext";
+import { useContext } from "react";
+import { ModalContext } from "../context/ModalContext";
+import Modal from "../components/Modal";
 
 const Home = () => {
+  const { showModal, setShowModal } = useContext(ModalContext);
   return (
     <LoadingProvider>
       <Main />
@@ -17,6 +21,7 @@ const Home = () => {
           image={request.image}
         />
       ))}
+      {showModal && <Modal />}
     </LoadingProvider>
   );
 };

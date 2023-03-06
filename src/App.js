@@ -10,6 +10,7 @@ import Home from "./pages/Home";
 import SignupPage from "./pages/SignupPage";
 import SigninPage from "./pages/SigninPage";
 import { AuthProvider } from "./context/AuthContext";
+import { ModalProvider } from "./context/ModalContext";
 
 function App() {
   return (
@@ -21,7 +22,9 @@ function App() {
             path="/movies"
             element={
               <ProtectedRoute>
-                <Home />
+                <ModalProvider>
+                  <Home />
+                </ModalProvider>
               </ProtectedRoute>
             }
           />
