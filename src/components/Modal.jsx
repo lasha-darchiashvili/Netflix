@@ -78,15 +78,15 @@ const Modal = () => {
                 <FaPlay className="xs:h-[3rem] xs:w-[3rem]" color="black" />
                 <p className="text-[1.6rem]">Play</p>
               </button>
-              <button className=" py-[1rem]  px-[1rem] flex  items-center justify-center rounded-full border-2 border-[gray] bg-[#2a2a2a]/60 transition hover:border-white hover:bg-white/10">
+              <button className=" xs:py-[1rem] xs:px-[1rem] py-[0.5rem] px-[0.5rem] flex  items-center justify-center rounded-full border-2 border-[gray] bg-[#2a2a2a]/60 transition hover:border-white hover:bg-white/10">
                 <AiOutlinePlus
-                  className="xs:h-[3rem] xs:w-[3rem]"
+                  className="xs:h-[3rem] xs:w-[3rem] h-[2rem] w-[2rem]"
                   color="white"
                 />
               </button>
-              <button className=" py-[1rem] px-[1rem]  flex items-center justify-center rounded-full border-2 border-[gray] bg-[#2a2a2a]/60 transition hover:border-white hover:bg-white/10">
+              <button className=" xs:py-[1rem] xs:px-[1rem] py-[0.5rem] px-[0.5rem] flex items-center justify-center rounded-full border-2 border-[gray] bg-[#2a2a2a]/60 transition hover:border-white hover:bg-white/10">
                 <AiOutlineLike
-                  className="xs:h-[3rem] xs:w-[3rem]"
+                  className="xs:h-[3rem] xs:w-[3rem] h-[2rem] w-[2rem]"
                   color="white"
                 />
               </button>
@@ -95,17 +95,20 @@ const Modal = () => {
               {!muted ? (
                 <button
                   onClick={() => setMuted(true)}
-                  className=" py-[1rem] px-[1rem]  flex items-center justify-center rounded-full border-2 border-[gray] bg-[#2a2a2a]/60 transition hover:border-white hover:bg-white/10"
+                  className=" xs:py-[1rem] xs:px-[1rem] py-[0.5rem] px-[0.5rem] flex items-center justify-center rounded-full border-2 border-[gray] bg-[#2a2a2a]/60 transition hover:border-white hover:bg-white/10"
                 >
-                  <VscMute className="xs:h-[3rem] xs:w-[3rem]" color="white" />
+                  <VscMute
+                    className="xs:h-[3rem] xs:w-[3rem] h-[2rem] w-[2rem]"
+                    color="white"
+                  />
                 </button>
               ) : (
                 <button
                   onClick={() => setMuted(false)}
-                  className=" py-[1rem] px-[1rem]  flex items-center justify-center rounded-full border-2 border-[gray] bg-[#2a2a2a]/60 transition hover:border-white hover:bg-white/10"
+                  className=" xs:py-[1rem] xs:px-[1rem] py-[0.5rem] px-[0.5rem] flex items-center justify-center rounded-full border-2 border-[gray] bg-[#2a2a2a]/60 transition hover:border-white hover:bg-white/10"
                 >
                   <VscUnmute
-                    className="xs:h-[3rem] xs:w-[3rem]"
+                    className="xs:h-[3rem] xs:w-[3rem] h-[2rem] w-[2rem]"
                     color="white"
                   />
                 </button>
