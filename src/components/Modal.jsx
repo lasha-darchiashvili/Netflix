@@ -27,8 +27,9 @@ const Modal = () => {
     )
       .then((response) => response.json())
       .then((data) => {
+        console.log(data);
         const trailerKey = data?.videos.results.find(
-          (el) => el.type === "Trailer"
+          (el, index) => el.type === "Trailer" || index === 0
         ).key;
         setTrailer(trailerKey);
         setGenres(data.genres);
