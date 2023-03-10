@@ -59,6 +59,23 @@ const Singup = () => {
           </Link>
         </p>
       </form>
+      <div className="px-[6rem] text-[1.8rem] mt-[6rem] sm:mt-0">
+        <p>Testing credintials </p>
+        <p>
+          {" "}
+          <span className="text-[1.6rem] text-graytx mt-[2rem]">
+            email:
+          </span>{" "}
+          test@gmail.com{" "}
+        </p>
+        <p>
+          {" "}
+          <span className="text-[1.6rem] text-graytx mt-[2rem]">
+            password:
+          </span>{" "}
+          testtest{" "}
+        </p>
+      </div>
     </div>
   );
 };
